@@ -1,0 +1,24 @@
+﻿
+
+@model MyChoice.Models.treeModel
+@{
+    ViewBag.Title = "New Tree Form";
+}
+
+<h2>@ViewBag.Title</h2>
+<form name="NewTree" method="post">
+    <p>Tree name: <input type="text" name="treeName" id="treeName" /></p>
+    <p>State: <input type="text" name="state" id="state" /></p>
+    <p>Price: <input type="number" min="1" max="800" name="price" id="price" /></p>
+    <p>Age Of Tree: <input type="number" min="1" max="200" name="age" id="age" /></p>
+    <p>Season: <input type="text" name="season" id="season" /></p>
+    <p>
+        Is this your favorite tree? (choose and option)<select name="IsFavorite" id="IsFavorite">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </p>
+    <input type="submit" value="Submit Tree" />
+
+</form>
+

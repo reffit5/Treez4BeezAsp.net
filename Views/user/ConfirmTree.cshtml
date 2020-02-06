@@ -1,9 +1,24 @@
-﻿
+﻿@model MyChoice.Models.treeModel
 @{
-    ViewBag.Title = "ConfirmTree";
-}
+      var displayTree = "";
+    var message = "";
 
-<h2>Confirm Tree</h2>
-<p> The following Tree has been added</p>
+    if (IsPost)
+    {
+        var nam = Request["treeName"];
+        var pri = Request["price"];
+        var fullinfo = "";
+
+        fullinfo = nam + " " + "$" + pri;
+        displayTree = fullinfo;
+    }
+    else
+    {
+        message = "You have not put in a correct input.";
+    }
+}
+<p>You have added a new tree.</p>
+<p>@displayTree</p>
+
 
 

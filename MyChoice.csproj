@@ -347,7 +347,6 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\user\NewTree.cshtml" />
     <Content Include="Views\user\AllTrees.cshtml" />
-    <Content Include="Views\user\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

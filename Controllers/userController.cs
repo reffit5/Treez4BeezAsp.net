@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyChoice.Models;
 
 namespace MyChoice.Controllers
 {
@@ -27,6 +28,20 @@ namespace MyChoice.Controllers
             <li>Birch</li>
             <li>Cedar</li>
             </ul>";
+        }
+
+        public ActionResult NewTree(string TreeName, string State, int Price, int Age, string Season, bool IsFavorite)
+        {
+            treeModel t = new treeModel()
+            {
+                treeName = TreeName,
+                state = State,
+                price = Price,
+                age = Age,
+                season = Season,
+                isFavorite = IsFavorite
+            };
+            return View("ConfirmTree", t);
         }
 
         [HttpPost]

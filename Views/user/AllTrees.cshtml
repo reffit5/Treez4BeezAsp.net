@@ -1,12 +1,16 @@
 ﻿
 @{
     Layout = null;
+    string[] Trees = { "Maple", "Palm", "Birch", "Cedar", "Pine" };
 }
+            <h2>Tree List</h2>
             <img src="~/Content/tree.png" style="width:50px;" />
+
             <ul>
-                <li>Maple</li>
-                <li>Palm</li>
-                <li>Birch</li>
-                <li>Cedar</li>
+                @foreach (var t in Trees)
+                {
+                    <li>@t</li>
+                }
             </ul>
+   
 

@@ -3,10 +3,29 @@
 @model MyChoice.Models.treeModel
 @{
     ViewBag.Title = "New Tree Form";
+
+    var displayTree = "";
+    var message = "";
+
+    if (IsPost)
+    {
+        var nam = Request["treeName"];
+        var pri = Request["price"];
+        var fullinfo = "";
+
+        fullinfo = nam + " " + "$" + pri;
+        displayTree = fullinfo;
+    }
+    else
+    {
+        message = "You have not put in a correct input.";
+    }
 }
 
 <h2>@ViewBag.Title</h2>
-<form name="NewTree" method="post">
+<html>
+<body>
+<form action="" method="post">
     <p>Tree name: <input type="text" name="treeName" id="treeName" /></p>
     <p>State: <input type="text" name="state" id="state" /></p>
     <p>Price: <input type="number" min="1" max="800" name="price" id="price" /></p>
@@ -18,7 +37,12 @@
             <option value="false">No</option>
         </select>
     </p>
-    <input type="submit" value="Submit Tree" />
-
+    <p><button type="submit">Submit Tree</button></p>
 </form>
+<p>
+
+    @displayTree<br />
+</p>
+    </body>
+</html>
 
